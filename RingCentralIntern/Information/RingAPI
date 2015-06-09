@@ -1,0 +1,148 @@
+Guide to RingAPI (https://developer.ringcentral.com/api-docs/latest/index.html#!#HttpMethods.html)
+
++ Resources and Parameters
+
+syntax: <protocol> :// <hostname> [: <port>] / <path> [? <query>] [# <fragment>]
+
+ex: https://platform.ringcentral.com/restapi/v1.0/account/159048008/extension/171857008/call-log?dateFrom=2012-08-26
+
+vars: accountId, extensionId (replaceable by '~' if currently logged in)
+
+ex getting service-plan: /restapi/v1.0/account/~/service-info
+
+ex getting msg: /restapi/v1.0/account/~/extension/171857008/message-store?messageType=SMS
+
+ex all msg: /restapi/v1.0/account/~/extension/~/message-store?messageType=SMS&messageType=Pager
+
+
++ HTTP Methods (GET, POST, PUT DELETE)
+
+Two ways of DELETE functionlity
+ 	DELETE /restapi/v1.0/account/~/extension/~/message-store/4084362008 HTTP/1.1
+
+		replaced by
+
+	a)	POST /restapi/v1.0/account/~/extension/~/message-store/4084362008 HTTP/1.1
+		X-HTTP-Method-Override: DELETE
+
+	(Use 'b' if client does not support HTTP headers)
+	b)	POST /restapi/v1.0/account/~/extension/~/message-
+		store/4084362008?_method=DELETE HTTP/1.1
+
+	c) 	Use tunneling as last resort (caution + must self learn)
+
++ Object Representation
+
+Content-Type
+
+Accept
+
+
++ User Agent Identification
+
+3 Main Rules:
+	a)	Client send User-Agent value with each request
+
+	b)	App instance send exactly the same user agent string in API requests (?)
+
+	c)	Format of user agent value follow convention (below)
+
+		User-Agent: RCMobile/3.6.0 (RingCentral; Android/2.6; rev.12345)
+		User-Agent: RCMobile/3.6.1 (OfficeAtHand; iOS/6.0; rev.987654)
+		User-Agent: Softphone/6.2.0.11632
+
+
++ Language Support
+
+Accept-Lanugage (HTTP header)
+	defaults to en-US and en-GB
+
+Example if one needs to get localized content in English (UK variant)
+
+	GET /restapi/v1.0/.... HTTP/1.1
+	Authorization: Bearer U0pDMDFQMDFQQVMwMnxBQUFWZmY4ZXoxM
+	Accept-Language: en-GB
+	Accept: application/json
+
+	HTTP/1.1 200 OK
+	Content-Type: application/json
+	Content-Language: en-GB
+
+	{...}
+
+
++ HTTP Status Codes
+
+	2xx - success
+
+	4xx - client error
+
+	5xx - server error
+
+
++ Batch Requests (GET, DELETE, PUT)
+
+Used for retrieving multiple resources.
+
+
++ Data Types
+
+	datetime - YYYY-MM-DDThh:mm:ss.sTZD, for example 2012-07-16T23:12:30.45Z)
+
+
++ Resource Identification Properties (supported by almost all API resources)
+
+	id 	- int/str
+	uri	- URI string
+
+
++ Tokens
+	
+	- Get token: 		POST /restapi/oauth/token
+
+		ex:		POST /restapi/oauth/token HTTP/1.1
+				Accept: application/json
+				Content-Type: application/x-www-form-urlencoded
+				Authorization: Basic cmVsLWFsbC1wZXJtaXNzaWXFjMmpRZmlQcnlkSUkweE92QQ==grant_type=password&username=18559100010&extension=101&password=121212
+
+	- Refresh token: 	(syntax same as above, uses same token) (?)
+
+	- Revoke token: 	POST /restapi/oauth/revoke HTTP/1.1
+
+		ex: 	POST /restapi/oauth/revoke HTTP/1.1
+				Content-Type: application/x-www-form-urlencoded
+				Authorization: Basic M2ZmYjNlMThkZDU4ZDE1YTk2NTIwYmFmNzUzZjBiNzk6MzI5OWQ0NTg5NGU1Njg5ODllOTY1ZTFiMTk5MGU2OTI  token=U0pDMDFQMDFKV1MwMXwJ_W7L1fG4eGXBW9Pp-otywzriCw
+
+
++ Getting Account Information
+
+(?) GET /restapi -> GET /restapi HTTP/1.1
+					Accept: application/json
+					Authorization: Bearer asdf
+
+	GET /restapi/v1.0/account/{accountId}
+
+	GET /restapi/v1.0/account/{accountId}/extension/{extensionId}
+
+		- returns info on one extensionId
+
+		- ex: GET /restapi/v1.0/account/11041661004/extension/~ HTTP/1.1
+
+	GET /restapi/v1.0/account/{accountId}/extension
+
+		- returns a list of extensions
+
+		- ex: GET /restapi/v1.0/account/~/extension HTTP/1.1
+
+
++ Get Call Log Record (Batch Supported) (?)
+
+	GET /restapi/v1.0/account/{accountId}/call-log/{callRecordId(s)}
+
+	GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/call-log/{callRecordId(s)}
+
+Filtered:
+	
+	GET /restapi/v1.0/account/{accountId}/call-log
+
+	GET /restapi/v1.0/account/{accountId}/extension/{extensionId}/call-log

@@ -1,0 +1,144 @@
++ HTTP
+
+1a. Initial Request Line
+	syntax: methodName	localPath	HTTPversion
+	ex:		GET /path/to/file/index.html HTTP/1.0
+
+
+1b. Initial Response Line
+	syntax: HTTPversion	statusCode	reasonPhrase
+	ex:		HTTP/1.0 200 OK
+			HTTP/1.0 404 Not Found
+
+	code:		1xx - info msg
+			2xx - success
+			3xx - redirects client to another URL
+
+			5xx - server's error
+
+2. 	Header Lines
+	syntax: headerName: value
+
+	a) header name is not case sensitive
+	b) value is case sensitive
+	c) can have any number of spaces between ":" and value
+
+		Header1: some-long-value-1a, some-long-value-1b
+
+		same as
+
+		HEADER1:	some-long-value-1a,
+					some-long-value-1b
+
+	Required in requests:
+		"Host:" is required in requests
+
+	Common syntax:
+		"From:" (typically email)
+		"User-Agent:" (typically program)
+
+	Server syntax:
+		"Server:"
+		"Last-Modified:"
+
+
+	CAUTION: keep in mind which headers to use to balance privacy and needs
+
+
+3. The Message Body
+	syntax:
+
+	"Content-Type:" (text/html, image/gif, application/json)
+	"Content-Length:" (number of bytes in body)
+
+
+Methods
+
+	GET (idempotent)
+		"give me this resource"
+	HEAD
+		same as GET, except it only gets the response's header, NEVER return message body for HEAD calls
+	POST
+		more descriptions
+			Content-Type:
+			Content-Lenght:
+		if file doesn't exist, POST will have server pick where to put it
+	PUT (idempotent)
+		changes the details of a specific resource
+		creates a new one if it isn't there, user gets to pick where
+	DELETE (idempotent)
+		deletes the resource
+	OPTIONS (idempotent)
+		returns the available options
+	PATCH
+		updates a resource
+
+		ex: 	PATCH /users/123
+
+				[
+				    { "op": "replace", "path": "/email", "value": "new.email@example.org" }
+				]	
+
+	Main difference between PUT and POST
+		PUT is like obj.attribute = something, while POST is like obj.set_attribute(value)
+			- you know exactly what will happen with PUT
+
+	Main difference between PUT and PATCH
+		PUT oftentimes requires you to GET the resource, modify it, then PUT it
+			- requires you to not miss updates between GET and PUT
+			- requires more bandwidth
+
++ SOAP vs REST
+
+REST mainly uses HTTP/HTTPS, SOAP can use anything
+
+SOAP is a protocol, relies on XML (takes longer to parse, more verbose)
+
+SOAP follows RPC (Remote Procedure Call), while REST is never RPC
+
+SOAP is a series of methods you can call to reflect a network representation
+
+REST is a series of resources for which you can call VERBS on
+
+REST is a WAY we can use HTTP (architecture)
+
+SOAP can never be rest because
+	a) no uniform "verbs"
+	b) server cannot maintain state for each client
+	c) state prevents caching
+
+P@ssw0rd
+
+
++ Layers of HTTP
+
+A - Application
+	High level APIs (HTTP, shell)
+
+P - Presentation
+	Translate the data (encrypt, decrypt, compress, decompress)
+
+S - Session
+	Manages the continuous connections between two nodes
+
+T - Transport
+	Sends information from one node to another
+	a) UDP
+		fast, but unreliable (lots of errors)
+	b) TCP
+		slow, but reliable
+
+N - Network
+	Structures all the nodes (addressing, routing, congestion control)
+
+D - Data Link
+	Establishes the link between two nodes
+
+P - Physical
+	The physical ethernet cable, wires, etc
+
+(This goes down-up)
+
++ Main Benefit of HTTP 1.1 over 1.0
+	Deals with "continuous transfer"
+	

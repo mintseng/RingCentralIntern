@@ -1,0 +1,47 @@
+Summary
+
+RingCentral API
+Finished reading the broad overview
+Currently looking over the In-Depth API Documentation
+
+HTTP and RESTful API
+OSI Model (Focused mainly on the transport layer)
+- UDP, TCP
+v1.0 vs v1.1
+- persistent connections
+Verbs, Idempotent, etc
+Status codes
+
+SOAP and REST comparison
+Benefits of each
+Why most companies use REST
+Adequate research on each
+
+Developer platform
+Sandbox and Production
+Services
+Dev-test
+
+JavaScript SDK Demo
+Adding on "message-store" and “fax” methods
+Hands on with RingCentral API
+
+RingCentral.github.io
+Brief intro to the important methods
+Tinkered with the api (on github)
+
+Swift (and possibly Objective C?)
+Learning Swift in preparation for making SDK
+
+Miscellaneous
+Briefed on:
+Salesforce
+Sumo
+RingCentral features
+
+Swift SDK (Authorization done so far)
+
+Made visual for RingOut
+
+Setting up person Sandbox Account
+

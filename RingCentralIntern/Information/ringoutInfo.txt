@@ -1,0 +1,51 @@
+To: A
+From: B
+CallerID: C
+
+FIRST: "B" will receive a call from "A"
+
+SECOND: If "B" accepts to connect call, "A" will receive a call from "C"
+
+THIRD: If "A" accepts to connect call, both users will be connected.
+
+Information:
+"To" will never see the real phone number of "From".
+If "To" does not actually exist, "From" will never receive the prompt call.
+Caller ID MUST BE VALID.
+
+Vincent
+Vyshak
+Sandbox
+Invalid (Random Invalid Number)
+SandboxEXT = Sandbox + EXT (101)
+
+
+To 			From 		CallerId 		ToDisplay 		FromDisplay		Successful?
+Vyshak		Vincent		Sandbox			Sandbox			Vyshak			Yes
+Vincent		Vyshak		Sandbox			Sandbox			Vincent			Yes
+
+Vyshak		Vincent		NONE			Sandbox			Vyshak			Yes (NONE is replaced by Sandbox)
+Vincent		Vyshak		NONE			Sandbox			Vincent			Yes (None is replaced by Sandbox)
+
+Vyshak		Vincent		Invalid											No (Error: Caller ID is not allowed)
+Vincent		Vyshak		Invalid											No (Error: Caller ID is not allowed)
+
+Invalid		Vincent		Sandbox							Invalid			Yes? (After Vincent Accepts call ends)
+Vincent 	Invalid		Sandbox											No (According to presense)
+
+Vincent		Vincent		Sandbox			Sandbox			Vincent			Yes
+Vincent		Vincent		NONE 			Sandbox 		Vincent 		Yes
+Vincent 	Vincent		Invalid 										No (Error: Caller ID is not allowed)
+
+Vincent		Vincent		SandboxEXT										No (Error: Caller ID is not allowed)
+
+playPrompt == true and playPrompt == false have same cases.
+
+If the field is not specified in the request then it is based
+on the CallerId parameter specified in RingCentral application (Main phone Number/Current Location
+Number/Blocked).
+
+If CallerID has a "+" in the front, it will give ERROR 403.
+
+
+Current Problem: Cannot put extension in CallerID

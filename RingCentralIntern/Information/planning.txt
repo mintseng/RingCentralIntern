@@ -1,0 +1,116 @@
+RCSDK.swift
+	contains the following objects:
+		Authentication
+		API versioning
+		Account and Extension Info
+		Call Log
+		Messaging
+		RingOut
+		Presense
+		Address Book
+		Notification
+		Dictionary
+	Allows basic function calls from each of the objects
+
+	Objects besides Authentication will check for Token and User before deciding what to do.
+
+Auth.swift
+	field:
+		private Token
+			- mainly used for refreshing
+		private User
+			- mainly used for accessing user based information
+	method:
+		token(api_key, api_secret, username, password) // getToken
+
+		token(api_key, api_secret, refresh_token) // meant for refreshing
+
+		revoke(app_key, app_secret, token) // deleteToken
+
+APIv.swift
+	field:
+
+	method:
+		getVersion()
+
+AccExt.swift
+	field:
+
+	method:
+		getAccount() // if not logged in, this will not work
+		getAccount(accountId)
+
+		getExtension() // if not logged in, this will not work
+		getExtension(accountId, extensionId)
+
+		getExtensions() // if not logged in, this will not work
+						// returns all EXT associated with acc
+		getExtensions(accountId)
+
+CallLog.swift
+	field:
+
+	method:
+		getCallRecords()
+
+		getCallRecordsEXT()
+
+		getCallLog()
+
+		getCallLogEXT()
+
+		getActiveCalls()
+
+		getActiveCallsEXT()
+
+
+
+Message.swift
+	field:
+
+	method:
+		getMessage()
+
+		deleteMessage()
+
+		changeMessage() // only changes 'read status' for now
+
+		deleteConversation()
+
+		getAllMessages()
+
+		getMessageContent() (?)
+
+		sendFax()
+
+		sendSMS()
+
+		sendPager()
+
+
+
+RingOut.swift
+	field:
+
+	method:
+		sendRingOut()
+
+		getRingOutStatus()
+
+		deleteRingOut()
+
+Presence.swift
+	field:
+
+	method:
+		getPresence()
+
+AddressBook.swift
+
+Notifications.swift
+
+Dictionary.swift
+
+Potential Classes:
+	Token
+	User
