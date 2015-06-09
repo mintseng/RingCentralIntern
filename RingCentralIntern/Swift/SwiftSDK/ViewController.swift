@@ -1,6 +1,7 @@
 import UIKit
 import Foundation
 
+// Visual for the iPhone application.
 class ViewController: UIViewController {
     
     @IBOutlet weak var text: UILabel!
