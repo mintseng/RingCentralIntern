@@ -1,6 +1,8 @@
 import UIKit
 import Foundation
 
+import CoreLocation
+
 // Visual for the iPhone application.
 class ViewController: UIViewController {
     
@@ -37,21 +39,6 @@ class ViewController: UIViewController {
     
     func login() {
         person = User(key: keyBox.text!, secret: secretBox.text!, user: userBox.text!, pass: passBox.text!)
-    }
-    
-
-    @IBAction func enter(sender: AnyObject) {
-        if (sender === userBox) {
-            println(sender.text)
-        } else if (sender === passBox) {
-            println("2")
-        } else if (sender === keyBox) {
-            println("3")
-        } else if (sender === secretBox) {
-            println("4")
-        }
-        
-        
     }
     
     
@@ -270,6 +257,26 @@ class ViewController: UIViewController {
         fromBox.text = "14088861168"
         toBox.text = "14088861168"
         messageBox.text = "hahaha"
+        
+        
+        // testing out maps
+        
+        var locManager = CLLocationManager()
+        locManager.requestWhenInUseAuthorization()
+        var currentLocation = CLLocation()
+        
+        if( CLLocationManager.authorizationStatus() == CLAuthorizationStatus.AuthorizedWhenInUse ||
+            CLLocationManager.authorizationStatus() == CLAuthorizationStatus.AuthorizedAlways){
+                
+                currentLocation = locManager.location
+                
+        }
+        
+//        currentLocation = locManager.location
+        
+        println(currentLocation.coordinate.longitude)
+        println(currentLocation.coordinate.latitude)
+        
         
     }
     
