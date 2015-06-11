@@ -247,7 +247,7 @@ class ViewController: UIViewController {
         for button in buttons {
             button.layer.cornerRadius = 5
             button.layer.borderWidth = 1
-            accountButton.layer.borderColor = UIColor.blackColor().CGColor
+            button.layer.borderColor = UIColor.blackColor().CGColor
         }
         
         userBox.text = "13464448343"
@@ -274,8 +274,8 @@ class ViewController: UIViewController {
         
 //        currentLocation = locManager.location
         
-        println(currentLocation.coordinate.longitude)
-        println(currentLocation.coordinate.latitude)
+//        println(currentLocation.coordinate.longitude)
+//        println(currentLocation.coordinate.latitude)
         
         
     }
