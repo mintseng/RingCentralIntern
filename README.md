@@ -11,7 +11,7 @@
 
 ***
 
-### 1. Swift SDK
+########## 1. Swift SDK
 
 Contains two classes within that structures the SDK.
 
