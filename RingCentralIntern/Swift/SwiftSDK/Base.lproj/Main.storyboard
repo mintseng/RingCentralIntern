@@ -154,17 +154,11 @@
                                 <rect key="frame" x="63" y="275" width="91" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <action selector="enter:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="E3U-5o-rJf"/>
-                                </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Nzl-Ry-Akr">
                                 <rect key="frame" x="213" y="275" width="89" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <action selector="enter:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="gaX-2J-UVu"/>
-                                </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="q3f-YV-mMH">
                                 <rect key="frame" x="17" y="351" width="286" height="30"/>

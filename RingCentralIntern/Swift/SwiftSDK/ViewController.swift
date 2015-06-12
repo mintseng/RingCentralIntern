@@ -277,7 +277,12 @@ class ViewController: UIViewController {
 //        println(currentLocation.coordinate.longitude)
 //        println(currentLocation.coordinate.latitude)
         
+//        var wrapper = SDKWrapper()
+//        wrapper.login(keyBox.text, secret: secretBox.text, user: userBox.text, pass: passBox.text)
         
+        
+        
+        NSLog("testing")
     }
     
     

@@ -78,7 +78,6 @@ class Platform {
 
             }
             
-            
         }
         
         task.resume()

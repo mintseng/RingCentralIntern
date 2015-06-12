@@ -4,10 +4,10 @@ import Foundation
 // Mirrors an actual User using the platform.
 // The idea is that only 1 user exists at a time accessing.
 class User {
-    let username: String
-    let password: String
-    let app_key: String
-    let app_secret: String
+    var username: String
+    var password: String
+    var app_key: String
+    var app_secret: String
     var access_token: String = ""
     var refresh_token: String = ""
     var authenticated: Bool = false
@@ -18,6 +18,29 @@ class User {
         self.password   = pass
         self.app_key    = key
         self.app_secret = secret
+    }
+    
+    init() {
+        self.username   = ""
+        self.password   = ""
+        self.app_key    = ""
+        self.app_secret = ""
+    }
+    
+    func setKey(token: String) {
+        self.app_key = token
+    }
+    
+    func setSecret(token: String) {
+        self.app_secret = token
+    }
+    
+    func setUser(token: String) {
+        self.username = token
+    }
+    
+    func setPass(token: String) {
+        self.password = token
     }
     
     // Sets the access token
