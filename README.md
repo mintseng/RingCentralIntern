@@ -11,7 +11,7 @@
 
 ***
 
-########## 1. Swift SDK
+### 1. Swift SDK
 
 Contains two classes within that structures the SDK.
 
@@ -82,7 +82,7 @@ presence:	Checks the presence on a specific account.
 
 
 
-- Swift SDK Demo
+### 2. Swift SDK Demo
 
 Contains a basic interface of how to use the basic Swift SDK.
 There are one main new class in this file.
@@ -95,7 +95,7 @@ When the data is passed in, a “User” will be created and sued to access “P
 If the credentials are right, it will perform the specified GET functions.
 You will also be able to send SMS and RingOut.
 
-- Swift SDK Larger Demo
+### 3. Swift SDK Larger Demo
 
 This demo elaboarates on what you can do with the Swift SDK.
 The main concept of this SDK is that it allows the user to schedules events.
@@ -110,7 +110,7 @@ Once the recipients reply to the SMS message, the program will gather data.
 Using the provided data, it will construct a calendar that fits everyone’s times.
 
 
-- Other Applications
+### 4. Other Applications
 
 2 Playground files to test around with HTTP requests.
 Various ways to send HTTP requests:
@@ -119,4 +119,4 @@ Various ways to send HTTP requests:
 
 NSURLSession is recommended as it is the newly updated one. 
 
-- etc.
+### 5. etc.
