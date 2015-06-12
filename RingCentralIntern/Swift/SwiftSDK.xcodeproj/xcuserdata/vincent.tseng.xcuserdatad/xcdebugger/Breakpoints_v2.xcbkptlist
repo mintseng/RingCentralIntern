@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SwiftSDK/ViewController2.swift"
-            timestampString = "455737842.412824"
+            timestampString = "455749440.885243"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "16"
-            endingLineNumber = "16"
+            startingLineNumber = "17"
+            endingLineNumber = "17"
             landmarkName = "sliding(_:)"
             landmarkType = "5">
          </BreakpointContent>

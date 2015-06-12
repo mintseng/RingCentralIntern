@@ -12,6 +12,7 @@ class ViewController2: UIViewController {
     
     @IBOutlet var addNumber: UIButton!
     @IBOutlet var table: UITableView!
+    @IBOutlet var timeTable: UITableView!
     
     @IBAction func sliding(sender: UISlider) {
         numberText.text = "\(sender.value - sender.value%1)"
@@ -36,8 +37,8 @@ class ViewController2: UIViewController {
         
     }
     
-    @IBAction func pressedAdd(sender: UIButton) {
-        
-    }
+//    @IBAction func pressedAdd(sender: UIButton) {
+//        
+//    }
     
 }
