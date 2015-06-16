@@ -1,0 +1,255 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E0FF4AC71B2F4F920045D414 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0FF4AC61B2F4F920045D414 /* main.swift */; };
+		E0FF4ACF1B2F4FE80045D414 /* Platform.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0FF4ACD1B2F4FE80045D414 /* Platform.swift */; };
+		E0FF4AD01B2F4FE80045D414 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0FF4ACE1B2F4FE80045D414 /* User.swift */; };
+		E0FF4AD21B2F52240045D414 /* SDKWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0FF4AD11B2F52240045D414 /* SDKWrapper.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		E0FF4AC11B2F4F920045D414 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		E0FF4AC31B2F4F920045D414 /* SwiftSDKWrapper */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SwiftSDKWrapper; sourceTree = BUILT_PRODUCTS_DIR; };
+		E0FF4AC61B2F4F920045D414 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		E0FF4ACD1B2F4FE80045D414 /* Platform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Platform.swift; sourceTree = "<group>"; };
+		E0FF4ACE1B2F4FE80045D414 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		E0FF4AD11B2F52240045D414 /* SDKWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDKWrapper.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E0FF4AC01B2F4F920045D414 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E0FF4ABA1B2F4F920045D414 = {
+			isa = PBXGroup;
+			children = (
+				E0FF4AC51B2F4F920045D414 /* SwiftSDKWrapper */,
+				E0FF4AC41B2F4F920045D414 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E0FF4AC41B2F4F920045D414 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E0FF4AC31B2F4F920045D414 /* SwiftSDKWrapper */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E0FF4AC51B2F4F920045D414 /* SwiftSDKWrapper */ = {
+			isa = PBXGroup;
+			children = (
+				E0FF4ACD1B2F4FE80045D414 /* Platform.swift */,
+				E0FF4ACE1B2F4FE80045D414 /* User.swift */,
+				E0FF4AD11B2F52240045D414 /* SDKWrapper.swift */,
+				E0FF4AC61B2F4F920045D414 /* main.swift */,
+			);
+			path = SwiftSDKWrapper;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E0FF4AC21B2F4F920045D414 /* SwiftSDKWrapper */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E0FF4ACA1B2F4F920045D414 /* Build configuration list for PBXNativeTarget "SwiftSDKWrapper" */;
+			buildPhases = (
+				E0FF4ABF1B2F4F920045D414 /* Sources */,
+				E0FF4AC01B2F4F920045D414 /* Frameworks */,
+				E0FF4AC11B2F4F920045D414 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SwiftSDKWrapper;
+			productName = SwiftSDKWrapper;
+			productReference = E0FF4AC31B2F4F920045D414 /* SwiftSDKWrapper */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E0FF4ABB1B2F4F920045D414 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0630;
+				ORGANIZATIONNAME = "Vincent Tseng";
+				TargetAttributes = {
+					E0FF4AC21B2F4F920045D414 = {
+						CreatedOnToolsVersion = 6.3.2;
+					};
+				};
+			};
+			buildConfigurationList = E0FF4ABE1B2F4F920045D414 /* Build configuration list for PBXProject "SwiftSDKWrapper" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = E0FF4ABA1B2F4F920045D414;
+			productRefGroup = E0FF4AC41B2F4F920045D414 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E0FF4AC21B2F4F920045D414 /* SwiftSDKWrapper */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E0FF4ABF1B2F4F920045D414 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E0FF4ACF1B2F4FE80045D414 /* Platform.swift in Sources */,
+				E0FF4AC71B2F4F920045D414 /* main.swift in Sources */,
+				E0FF4AD21B2F52240045D414 /* SDKWrapper.swift in Sources */,
+				E0FF4AD01B2F4FE80045D414 /* User.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		E0FF4AC81B2F4F920045D414 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		E0FF4AC91B2F4F920045D414 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		E0FF4ACB1B2F4F920045D414 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		E0FF4ACC1B2F4F920045D414 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E0FF4ABE1B2F4F920045D414 /* Build configuration list for PBXProject "SwiftSDKWrapper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E0FF4AC81B2F4F920045D414 /* Debug */,
+				E0FF4AC91B2F4F920045D414 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E0FF4ACA1B2F4F920045D414 /* Build configuration list for PBXNativeTarget "SwiftSDKWrapper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E0FF4ACB1B2F4F920045D414 /* Debug */,
+				E0FF4ACC1B2F4F920045D414 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E0FF4ABB1B2F4F920045D414 /* Project object */;
+}

@@ -277,12 +277,22 @@ class ViewController: UIViewController {
 //        println(currentLocation.coordinate.longitude)
 //        println(currentLocation.coordinate.latitude)
         
-//        var wrapper = SDKWrapper()
-//        wrapper.login(keyBox.text, secret: secretBox.text, user: userBox.text, pass: passBox.text)
+        var wrapper = SDKWrapper()
+        wrapper.login(keyBox.text, secret: secretBox.text, user: userBox.text, pass: passBox.text) { (Bool) -> Void in
+            println("inside: " + wrapper.isAuth().description)
+            if (Bool) {
+                println("Success!")
+            } else {
+                println("Error.")
+            }
+        }
         
+        println("outside: " + wrapper.isAuth().description)
+
         
-        
-        NSLog("testing")
+//        
+//        
+//        NSLog("testing")
     }
     
     
