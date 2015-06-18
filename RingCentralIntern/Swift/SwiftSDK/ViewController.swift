@@ -287,9 +287,10 @@ class ViewController: UIViewController {
             }
         }
         
+        
+        
         println("outside: " + wrapper.isAuth().description)
 
-        
 //        
 //        
 //        NSLog("testing")

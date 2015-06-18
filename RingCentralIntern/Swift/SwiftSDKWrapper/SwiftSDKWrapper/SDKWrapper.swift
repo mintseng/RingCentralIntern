@@ -20,8 +20,6 @@ class SDKWrapper {
         self.user.setUser(user)
         self.user.setPass(pass)
         
-        println("hihi")
-        
         self.platform.authenticate(self.user) { (databack, error) in
             dispatch_sync(dispatch_get_main_queue(), { () -> Void in
                 completion(databack, error)
