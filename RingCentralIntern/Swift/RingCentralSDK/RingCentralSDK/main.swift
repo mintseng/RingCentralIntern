@@ -11,4 +11,4 @@ var rcsdk = Sdk(appKey: app_key, appSecret: app_secret, server: Sdk.RC_SERVER_SA
 
 var platform = rcsdk.getPlatform()
 
-platform.authorize(username, password: password, ext: ext)
+platform.authorize(username, ext: ext, password: password)

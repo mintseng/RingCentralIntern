@@ -12,6 +12,7 @@ class Sdk {
     var platform: Platform
     var subscription: Subscription?
     
+    let server: String
     
     /// Constructor for making the SDK object.
     ///
@@ -27,8 +28,43 @@ class Sdk {
     /// :param: server      Choice of PRODUCTION or SANDBOX
     init(appKey: String, appSecret: String, server: String) {
         platform = Platform(appKey: appKey, appSecret: appSecret, server: server)
+        self.server = server
+        setVersion()
     }
     
+    
+    /// Sets version to the version of the current SDK
+    func setVersion() {
+        let url = NSURL(string: server + "/")
+        
+        // Sets up the request
+        let request = NSMutableURLRequest(URL: url!)
+        request.HTTPMethod = "GET"
+        request.setValue("application/json", forHTTPHeaderField: "Accept")
+
+        
+        // Sending HTTP request
+        var task: NSURLSessionDataTask = NSURLSession.sharedSession().dataTaskWithRequest(request) {
+            (data, response, error) in
+            if error != nil {
+                println(error)
+            } else {
+                if ((response as! NSHTTPURLResponse).statusCode / 100 != 2) {
+                    println(response)
+                    println(NSString(data: data, encoding: NSUTF8StringEncoding))
+                    return
+                }
+                
+                var errors: NSError?
+                let readdata = NSJSONSerialization.JSONObjectWithData(data, options: nil, error: &errors) as! NSDictionary
+                                
+            }
+            
+            
+        }
+        
+        task.resume()
+    }
     
     /// Returns the Platform with the specified appKey and appSecret.
     ///

@@ -1,5 +1,6 @@
 import Foundation
 
+/// Platform used to call HTTP request methods.
 class Platform {
     
     // Platform credentials
@@ -26,7 +27,8 @@ class Platform {
     /// :param: username    The username of the RingCentral account
     /// :param: password    The password of the RingCentral account
     func authorize(username: String, password: String) {
-        
+        auth = Auth(username: username, password: password)
+        auth!.login(appKey, secret: appSecret)
     }
     
     
@@ -35,8 +37,9 @@ class Platform {
     /// :param: username    The username of the RingCentral account
     /// :param: password    The password of the RingCentral account
     /// :param: ext         The extension of the RingCentral account
-    func authorize(username: String, password: String, ext: String) {
-        
+    func authorize(username: String, ext: String, password: String) {
+        auth = Auth(username: username, ext: ext, password: password)
+        auth!.login(appKey, secret: appSecret)
     }
     
     
