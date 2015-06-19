@@ -30,6 +30,16 @@ class Platform {
     }
     
     
+    /// Authorizes the user with the correct credentials (with extra ext)
+    ///
+    /// :param: username    The username of the RingCentral account
+    /// :param: password    The password of the RingCentral account
+    /// :param: ext         The extension of the RingCentral account
+    func authorize(username: String, password: String, ext: String) {
+        
+    }
+    
+    
     /// Refreshes the Auth object so that the accessToken and refreshToken are updated.
     ///
     /// **Caution**: Refreshing an accessToken will deplete it's current time, and will
@@ -59,7 +69,7 @@ class Platform {
     ///
     /// :return: A boolean to check the validity of authorization.
     func isAuthorized() -> Bool {
-        return auth.isAccessTokenValid()
+        return auth!.isAccessTokenValid()
     }
     
     

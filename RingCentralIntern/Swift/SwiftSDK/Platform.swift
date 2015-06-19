@@ -126,7 +126,7 @@ class Platform {
         let request = NSMutableURLRequest(URL: url!)
         request.HTTPMethod = "GET"
         request.setValue("application/json", forHTTPHeaderField: "Accept")
-        request.setValue("Bearer" + " " + person.getAccessToken(), forHTTPHeaderField: "Authorization")
+//        request.setValue("Bearer" + " " + person.getAccessToken(), forHTTPHeaderField: "Authorization")
         
         // Sending HTTP request
         var task: NSURLSessionDataTask = NSURLSession.sharedSession().dataTaskWithRequest(request) {

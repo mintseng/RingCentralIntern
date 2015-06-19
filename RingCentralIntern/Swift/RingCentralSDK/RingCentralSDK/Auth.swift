@@ -9,11 +9,11 @@ class Auth {
     
     
     func isAccessTokenValid() -> Bool {
-        
+        return false
     }
     
     func isRefreshTokenVald() -> Bool {
-        
+        return false
     }
     
 }
