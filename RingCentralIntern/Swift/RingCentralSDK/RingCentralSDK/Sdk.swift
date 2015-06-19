@@ -41,17 +41,15 @@ class Sdk {
     /// Returns the Platform with the specified appKey and appSecret.
     ///
     /// :returns: A Platform to access the methods of the SDK
-    func getPlatform() -> Platform? {
-        
-        return nil
+    func getPlatform() -> Platform {
+        return self.platform
     }
     
     /// Returns the current Subscription.
     ///
     /// :returns: A Subscription that the user is currently following
     func getSubscription() -> Subscription? {
-        
-        return nil
+        return self.subscription
     }
     
     
