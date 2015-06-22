@@ -56,6 +56,8 @@ platform.logout()
 sleep(2)
 
 
+// MUST WAIT FOR RESPONSE to receive data/response/error
+
 
 
 

@@ -60,8 +60,7 @@ class Platform {
     ///
     /// Kills the current accessToken and refreshToken.
     func logout() {
-        auth!.revokeAccessToken()
-        auth!.revokeRefreshToken()
+        auth!.revokeToken()
     }
     
     
