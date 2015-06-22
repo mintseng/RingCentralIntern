@@ -53,6 +53,7 @@ sleep(2)
 
 platform.logout()
 
+sleep(2)
 
 
 

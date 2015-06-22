@@ -241,7 +241,7 @@ class Auth {
         // Sending HTTP request
         var task: NSURLSessionDataTask = NSURLSession.sharedSession().dataTaskWithRequest(request) {
             (data, response, error) in
-
+            println(response)
         }
         
         task.resume()
@@ -272,9 +272,7 @@ class Auth {
         // Sending HTTP request
         var task: NSURLSessionDataTask = NSURLSession.sharedSession().dataTaskWithRequest(request) {
             (data, response, error) in
-            println(data)
             println(response)
-            println(error)
         }
         task.resume()
     }
