@@ -27,7 +27,7 @@ class Platform {
     /// :param: username    The username of the RingCentral account
     /// :param: password    The password of the RingCentral account
     func authorize(username: String, password: String) {
-        auth = Auth(username: username, password: password)
+        auth = Auth(username: username, password: password, server: server)
         auth!.login(appKey, secret: appSecret)
     }
     
@@ -38,7 +38,7 @@ class Platform {
     /// :param: password    The password of the RingCentral account
     /// :param: ext         The extension of the RingCentral account
     func authorize(username: String, ext: String, password: String) {
-        auth = Auth(username: username, ext: ext, password: password)
+        auth = Auth(username: username, ext: ext, password: password, server: self.server)
         auth!.login(appKey, secret: appSecret)
     }
     
@@ -48,7 +48,11 @@ class Platform {
     /// **Caution**: Refreshing an accessToken will deplete it's current time, and will
     /// not be appended to following accessToken.
     func refresh() {
-        
+        if let holder: Auth = self.auth {
+            self.auth!.refresh()
+        } else {
+            notAuthorized()
+        }
     }
     
     
@@ -56,7 +60,8 @@ class Platform {
     ///
     /// Kills the current accessToken and refreshToken.
     func logout() {
-        
+        auth!.revokeAccessToken()
+        auth!.revokeRefreshToken()
     }
     
     
@@ -73,6 +78,13 @@ class Platform {
     /// :return: A boolean to check the validity of authorization.
     func isAuthorized() -> Bool {
         return auth!.isAccessTokenValid()
+    }
+    
+    /// Tells the user that the platform is not yet authorized.
+    ///
+    ///
+    func notAuthorized() {
+        
     }
     
     

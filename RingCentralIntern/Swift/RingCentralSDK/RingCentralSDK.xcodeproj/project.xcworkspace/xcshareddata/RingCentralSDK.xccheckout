@@ -7,7 +7,7 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>EDA7FD27-9708-4BE1-85DB-A407DE9C8B64</string>
 	<key>IDESourceControlProjectName</key>
-	<string>project</string>
+	<string>RingCentralSDK</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>7502F46509E9118C0E432E90AAD176E4908213B7</key>
@@ -16,7 +16,7 @@
 		<string>https://github.com/mintseng/RingCentralIntern</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>Swift/RingCentralSDK/RingCentralSDK.xcodeproj/project.xcworkspace</string>
+	<string>Swift/RingCentralSDK/RingCentralSDK.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>7502F46509E9118C0E432E90AAD176E4908213B7</key>

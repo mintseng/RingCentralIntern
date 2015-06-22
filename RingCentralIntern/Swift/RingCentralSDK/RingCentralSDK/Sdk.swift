@@ -5,8 +5,8 @@ class Sdk {
     
     
     // Set constants for SANDBOX and PRODUCTION servers.
-    static var RC_SERVER_PRODUCTION: String = "https://plaform.ringcentral.com/restapi"
-    static var RC_SERVER_SANDBOX: String = "https://plaform.devtest.ringcentral.com/restapi"
+    static var RC_SERVER_PRODUCTION: String = "https://platform.ringcentral.com/restapi"
+    static var RC_SERVER_SANDBOX: String = "https://platform.devtest.ringcentral.com/restapi"
     
     // Platform variable, version, and current Subscriptions
     var platform: Platform
