@@ -99,16 +99,24 @@ class Platform {
         request.HTTPMethod = "GET"
         request.setValue("application/json", forHTTPHeaderField: "Accept")
 
-        // Sending HTTP request
-        var task: NSURLSessionDataTask = NSURLSession.sharedSession().dataTaskWithRequest(request) {
-            (data, response, error) in
-            
-            var errors: NSError?
-            let readdata = NSJSONSerialization.JSONObjectWithData(data, options: nil, error: &errors) as! NSDictionary
-            self.version = readdata["serverVersion"] as! String
-        }
+        var response: NSURLResponse?
+        var error: NSError?
+        let data: NSData! = NSURLConnection.sendSynchronousRequest(request, returningResponse: &response, error: &error)
         
-        task.resume()
+        var errors: NSError?
+        let readdata = NSJSONSerialization.JSONObjectWithData(data, options: nil, error: &errors) as! NSDictionary
+        self.version = readdata["serverVersion"] as! String
+    }
+    
+    
+    func getAccountInfo() -> Bool {
+        var test: Bool = false
+        println("hi")
+            println("hi3")
+            Account().getAccountIdExtensionId(self.server, auth: self.auth!)
+        println("omg this worked")
+            test = true
+        return test
     }
     
     

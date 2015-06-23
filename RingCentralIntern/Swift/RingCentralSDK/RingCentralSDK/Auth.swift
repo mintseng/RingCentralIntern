@@ -79,44 +79,33 @@ class Auth {
         
         // Sending HTTP request
         self.updating = true
-        var task: NSURLSessionDataTask = NSURLSession.sharedSession().dataTaskWithRequest(request) {
-            (data, response, error) in
-            if error != nil {
-                self.updating = false
-                println(error)
-            } else {
-                
-                if ((response as! NSHTTPURLResponse).statusCode / 100 != 2) {
-                    self.updating = false
-                    return
-                }
-                var errors: NSError?
-                let readdata = NSJSONSerialization.JSONObjectWithData(data, options: nil, error: &errors) as! NSDictionary
-                
-                // Setting authentication information
-                self.authenticated = true
-                self.access_token = readdata["access_token"] as? String
-                self.expires_in = readdata["expires_in"] as! Double
-                
-                self.refresh_token = readdata["refresh_token"] as? String
-                self.refresh_token_expires_in = readdata["refresh_token_expires_in"] as! Double
-                
-                self.token_type = readdata["token_type"] as? String
-                self.scope = readdata["scope"] as? String
-                self.owner_id = readdata["owner_id"] as? String
-                
-                let time = NSDate().timeIntervalSince1970
-                
-                self.expire_time = time + self.expires_in
-                self.refresh_token_expire_time = time + self.refresh_token_expires_in
-                
-                self.updating = false
-            }
-            
-            
-        }
         
-        task.resume()
+        var response: NSURLResponse?
+        var error: NSError?
+        let data = NSURLConnection.sendSynchronousRequest(request, returningResponse: &response, error: &error)
+        
+        var errors: NSError?
+        let readdata = NSJSONSerialization.JSONObjectWithData(data!, options: nil, error: &errors) as! NSDictionary
+
+        // Setting authentication information
+        self.authenticated = true
+        self.access_token = readdata["access_token"] as? String
+        self.expires_in = readdata["expires_in"] as! Double
+                
+        self.refresh_token = readdata["refresh_token"] as? String
+        self.refresh_token_expires_in = readdata["refresh_token_expires_in"] as! Double
+        
+        self.token_type = readdata["token_type"] as? String
+        self.scope = readdata["scope"] as? String
+        self.owner_id = readdata["owner_id"] as? String
+                
+        let time = NSDate().timeIntervalSince1970
+                
+        self.expire_time = time + self.expires_in
+        self.refresh_token_expire_time = time + self.refresh_token_expires_in
+                
+        self.updating = false
+
     }
     
     /// Refreshes the access_token and refresh_token with the current refresh_token
@@ -238,20 +227,20 @@ class Auth {
         request.setValue("application/json", forHTTPHeaderField: "Accept")
         request.setValue("Basic" + " " + base64String, forHTTPHeaderField: "Authorization")
         
-        // Sending HTTP request
-        var task: NSURLSessionDataTask = NSURLSession.sharedSession().dataTaskWithRequest(request) {
-            (data, response, error) in
-//            println(response)
-            self.access_token = nil
-            self.expires_in = 0
-            self.expire_time = 0
-            
-            self.refresh_token = nil
-            self.refresh_token_expires_in = 0
-            self.refresh_token_expire_time = 0
-        }
+        var response: NSURLResponse?
+        var error: NSError?
+        let urlData = NSURLConnection.sendSynchronousRequest(request, returningResponse: &response, error: &error)
         
-        task.resume()
+        self.access_token = nil
+        self.expires_in = 0
+        self.expire_time = 0
+            
+        self.refresh_token = nil
+        self.refresh_token_expires_in = 0
+        self.refresh_token_expire_time = 0
+        
+        println(response)
+    
     }
     
     
@@ -286,6 +275,14 @@ class Auth {
 //        }
 //        task.resume()
 //    }
+    
+    func getAccessToken() -> String {
+        return self.access_token!
+    }
+    
+    func getRefreshToken() -> String {
+        return self.refresh_token!
+    }
     
     
     

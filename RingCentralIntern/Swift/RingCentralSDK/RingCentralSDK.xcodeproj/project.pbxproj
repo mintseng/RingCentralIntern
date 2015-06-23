@@ -12,6 +12,7 @@
 		E0FF4B1B1B3337A50045D414 /* Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0FF4B1A1B3337A50045D414 /* Auth.swift */; };
 		E0FF4B1D1B3338200045D414 /* Platform.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0FF4B1C1B3338200045D414 /* Platform.swift */; };
 		E0FF4B1F1B333E1F0045D414 /* Subscription.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0FF4B1E1B333E1F0045D414 /* Subscription.swift */; };
+		E0FF4B211B39C6560045D414 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0FF4B201B39C6560045D414 /* Account.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -33,6 +34,7 @@
 		E0FF4B1A1B3337A50045D414 /* Auth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Auth.swift; sourceTree = "<group>"; };
 		E0FF4B1C1B3338200045D414 /* Platform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Platform.swift; sourceTree = "<group>"; };
 		E0FF4B1E1B333E1F0045D414 /* Subscription.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Subscription.swift; sourceTree = "<group>"; };
+		E0FF4B201B39C6560045D414 /* Account.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 				E0FF4B181B3337950045D414 /* Sdk.swift */,
 				E0FF4B1E1B333E1F0045D414 /* Subscription.swift */,
 				E0FF4B1C1B3338200045D414 /* Platform.swift */,
+				E0FF4B201B39C6560045D414 /* Account.swift */,
 				E0FF4B1A1B3337A50045D414 /* Auth.swift */,
 			);
 			path = RingCentralSDK;
@@ -135,6 +138,7 @@
 				E0FF4B1D1B3338200045D414 /* Platform.swift in Sources */,
 				E0FF4B1B1B3337A50045D414 /* Auth.swift in Sources */,
 				E0FF4B1F1B333E1F0045D414 /* Subscription.swift in Sources */,
+				E0FF4B211B39C6560045D414 /* Account.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -252,6 +256,7 @@
 				E0FF4B171B3337790045D414 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
