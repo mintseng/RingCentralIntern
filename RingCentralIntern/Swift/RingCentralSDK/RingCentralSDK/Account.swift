@@ -2,6 +2,12 @@ import Foundation
 
 class Account {
     
+    let server: String
+    
+    init(server: String) {
+        self.server = server
+    }
+    
     func getAccountId(server: String, auth: Auth) {
         let url = NSURL(string: server + "/v1.0/account/~")
         

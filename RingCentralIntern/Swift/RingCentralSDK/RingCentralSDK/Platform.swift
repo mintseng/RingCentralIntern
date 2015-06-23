@@ -111,9 +111,17 @@ class Platform {
     
     func getAccountInfo() -> Bool {
         var test: Bool = false
-        Account().getAccountIdExtensionId(self.server, auth: self.auth!)
+        Account(server: self.server).getAccountIdExtensionId(self.server, auth: self.auth!)
         test = true
         return test
+    }
+    
+    func test() {
+        CallLog(server: self.server).callLog(self.auth!)
+        CallLog(server: self.server).callLogExt(self.auth!)
+        CallLog(server: self.server).activeCalls(self.auth!)
+        CallLog(server: self.server).activeCallsExt(self.auth!)
+        
     }
     
     
