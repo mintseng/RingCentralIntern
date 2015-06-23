@@ -111,11 +111,8 @@ class Platform {
     
     func getAccountInfo() -> Bool {
         var test: Bool = false
-        println("hi")
-            println("hi3")
-            Account().getAccountIdExtensionId(self.server, auth: self.auth!)
-        println("omg this worked")
-            test = true
+        Account().getAccountIdExtensionId(self.server, auth: self.auth!)
+        test = true
         return test
     }
     

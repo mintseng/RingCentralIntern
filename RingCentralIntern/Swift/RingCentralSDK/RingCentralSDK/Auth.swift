@@ -27,7 +27,7 @@ class Auth {
     let server: String
     
     var authenticated: Bool = false
-    var updating: Bool = false
+
     
     
     /// Constructor for authorization for the platform
@@ -78,8 +78,6 @@ class Auth {
         request.setValue("Basic" + " " + base64String, forHTTPHeaderField: "Authorization")
         
         // Sending HTTP request
-        self.updating = true
-        
         var response: NSURLResponse?
         var error: NSError?
         let data = NSURLConnection.sendSynchronousRequest(request, returningResponse: &response, error: &error)
@@ -103,9 +101,7 @@ class Auth {
                 
         self.expire_time = time + self.expires_in
         self.refresh_token_expire_time = time + self.refresh_token_expires_in
-                
-        self.updating = false
-
+        
     }
     
     /// Refreshes the access_token and refresh_token with the current refresh_token
@@ -129,61 +125,35 @@ class Auth {
         request.setValue("Basic" + " " + base64String, forHTTPHeaderField: "Authorization")
         
         // Sending HTTP request
-        self.updating = true
-        var task: NSURLSessionDataTask = NSURLSession.sharedSession().dataTaskWithRequest(request) {
-            (data, response, error) in
-            if error != nil {
-                println(error)
-                self.updating = false
-            } else {
-                
-                if ((response as! NSHTTPURLResponse).statusCode / 100 != 2) {
-                    self.updating = false
-                    return
-                }
-                var errors: NSError?
-                let readdata = NSJSONSerialization.JSONObjectWithData(data, options: nil, error: &errors) as! NSDictionary
-                
-                // Setting authentication information
-                self.authenticated = true
-                self.access_token = readdata["access_token"] as? String
-                self.expires_in = readdata["expires_in"] as! Double
-                
-                self.refresh_token = readdata["refresh_token"] as? String
-                self.refresh_token_expires_in = readdata["refresh_token_expires_in"] as! Double
-                
-                self.token_type = readdata["token_type"] as? String
-                self.scope = readdata["scope"] as? String
-                self.owner_id = readdata["owner_id"] as? String
-                
-                let time = NSDate().timeIntervalSince1970
-                
-                self.expire_time = time + self.expires_in
-                self.refresh_token_expire_time = time + self.refresh_token_expires_in
-                
-                self.updating = false
-            }
-            
-            
-        }
         
-        task.resume()
-    }
-    
-    /// Checks if the access_token needs to be refreshed
-    ///
-    ///
-    func update() -> Bool {
+        var response: NSURLResponse?
+        var error: NSError?
+        let data: NSData! = NSURLConnection.sendSynchronousRequest(request, returningResponse: &response, error: &error)
+        
+        var errors: NSError?
+        let readdata = NSJSONSerialization.JSONObjectWithData(data, options: nil, error: &errors) as! NSDictionary
+        
+        
+        // Setting authentication information
+        self.authenticated = true
+        self.access_token = readdata["access_token"] as? String
+        self.expires_in = readdata["expires_in"] as! Double
+                
+        self.refresh_token = readdata["refresh_token"] as? String
+        self.refresh_token_expires_in = readdata["refresh_token_expires_in"] as! Double
+                
+        self.token_type = readdata["token_type"] as? String
+        self.scope = readdata["scope"] as? String
+        self.owner_id = readdata["owner_id"] as? String
+                
         let time = NSDate().timeIntervalSince1970
-        if (time < refresh_token_expire_time) {
-            if (!(time < self.expire_time)) {
-                refresh()
-            }
-            return true
-        } else {
-            return false
-        }
+                
+        self.expire_time = time + self.expires_in
+        self.refresh_token_expire_time = time + self.refresh_token_expires_in
+            
+            
         
+
     }
     
     /// Checks whether or not the access token is valid
@@ -198,13 +168,6 @@ class Auth {
     /// :returns: A boolean for validity of the refresh token
     func isRefreshTokenVald() -> Bool {
         return false
-    }
-    
-    /// Checks if Auth is currently updating
-    ///
-    /// :returns: A boolean for if Auth is currently updating
-    func isUpdating() -> Bool {
-        return self.updating
     }
     
     /// Revokes the access_token
@@ -229,7 +192,7 @@ class Auth {
         
         var response: NSURLResponse?
         var error: NSError?
-        let urlData = NSURLConnection.sendSynchronousRequest(request, returningResponse: &response, error: &error)
+        let data = NSURLConnection.sendSynchronousRequest(request, returningResponse: &response, error: &error)
         
         self.access_token = nil
         self.expires_in = 0

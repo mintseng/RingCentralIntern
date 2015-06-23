@@ -16,7 +16,7 @@ platform.authorize(username, ext: ext, password: password)
 usleep(2000000)
 
 println(platform.getAccountInfo())
-print("hi2")
+
 sleep(2)
 
 println()

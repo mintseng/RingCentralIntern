@@ -20,7 +20,6 @@ class Account {
     
     func getAccountIdExtensionId(server: String, auth: Auth) {
         let url = NSURL(string: server + "/v1.0/account/~/extension/~")
-        println("hi5")
         let request = NSMutableURLRequest(URL: url!)
         request.HTTPMethod = "GET"
         request.setValue("application/json", forHTTPHeaderField: "Accept")
