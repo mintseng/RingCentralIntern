@@ -8,6 +8,7 @@ class Platform {
     let server: String
     let appKey: String
     let appSecret: String
+    var version: String = "0"
     
     
     /// Constructor for the platform of the SDK
@@ -19,6 +20,7 @@ class Platform {
         self.appKey = appKey
         self.appSecret = appSecret
         self.server = server
+        setVersion()
     }
     
     
@@ -84,6 +86,29 @@ class Platform {
     ///
     func notAuthorized() {
         
+    }
+    
+    /// Sets the version of the current API
+    ///
+    ///
+    func setVersion() {
+        let url = NSURL(string: server + "/")
+        
+        // Sets up the request
+        let request = NSMutableURLRequest(URL: url!)
+        request.HTTPMethod = "GET"
+        request.setValue("application/json", forHTTPHeaderField: "Accept")
+
+        // Sending HTTP request
+        var task: NSURLSessionDataTask = NSURLSession.sharedSession().dataTaskWithRequest(request) {
+            (data, response, error) in
+            
+            var errors: NSError?
+            let readdata = NSJSONSerialization.JSONObjectWithData(data, options: nil, error: &errors) as! NSDictionary
+            self.version = readdata["serverVersion"] as! String
+        }
+        
+        task.resume()
     }
     
     

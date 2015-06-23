@@ -55,6 +55,9 @@ platform.logout()
 
 sleep(2)
 
+println(platform.version)
+
+sleep(1)
 
 // MUST WAIT FOR RESPONSE to receive data/response/error
 
