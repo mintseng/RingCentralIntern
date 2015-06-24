@@ -240,9 +240,6 @@ class Platform {
             "\"playPrompt\": true" +
         "}"
         
-        
-        
-        
         let plainData = (person.app_key + ":" + person.app_secret as NSString).dataUsingEncoding(NSUTF8StringEncoding)
         let base64String = plainData!.base64EncodedStringWithOptions(NSDataBase64EncodingOptions(rawValue: 0))
         

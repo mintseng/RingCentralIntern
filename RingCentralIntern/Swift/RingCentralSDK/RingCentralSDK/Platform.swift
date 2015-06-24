@@ -131,11 +131,17 @@ class Platform {
     func test3() {
         Messaging(server: self.server).getMessages(self.auth!)
         Messaging(server: self.server).getMessage(self.auth!, msgId: "2394843412560562429")
-        
-        
+    }
+    
+    func test4() {
+        RingOut(server: self.server).ringOut(self.auth!, to: "14088861168", from: "14088861168")
     }
     
     
+    // Faulty
+    func test5() {
+        RingOut(server: self.server).getRingOut(self.auth!, ringId: "131069004")
+    }
     
     
     
