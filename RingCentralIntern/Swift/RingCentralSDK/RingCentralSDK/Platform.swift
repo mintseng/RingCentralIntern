@@ -149,6 +149,15 @@ class Platform {
     
     // Note to self, ADDRESS BOOK DOES NOT WORK
     
+    func test7() {
+        Dictionary(server: self.server).getCountry(auth!)
+        Dictionary(server: self.server).getCountries(auth!)
+        Dictionary(server: self.server).getLanguage(auth!)
+        Dictionary(server: self.server).getLanguages(auth!)
+        Dictionary(server: self.server).getState(auth!)
+        Dictionary(server: self.server).getTimezone(auth!)
+        Dictionary(server: self.server).getTimezones(auth!)
+    }
     
     
 }
