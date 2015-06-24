@@ -143,7 +143,9 @@ class Platform {
         RingOut(server: self.server).getRingOut(self.auth!, ringId: "131069004")
     }
     
-    
+    func test6() {
+        Presence(server: self.server).getPresence(self.auth!)
+    }
     
     
 }
