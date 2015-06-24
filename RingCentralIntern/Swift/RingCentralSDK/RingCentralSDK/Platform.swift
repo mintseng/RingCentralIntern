@@ -147,5 +147,8 @@ class Platform {
         Presence(server: self.server).getPresence(self.auth!)
     }
     
+    // Note to self, ADDRESS BOOK DOES NOT WORK
+    
+    
     
 }

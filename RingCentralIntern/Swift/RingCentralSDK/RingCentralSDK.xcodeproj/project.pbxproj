@@ -17,6 +17,7 @@
 		E0FF4B251B3A02CC0045D414 /* Messaging.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0FF4B241B3A02CC0045D414 /* Messaging.swift */; };
 		E0FF4B271B3A02DD0045D414 /* RingOut.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0FF4B261B3A02DD0045D414 /* RingOut.swift */; };
 		E0FF4B291B3A02E50045D414 /* Presence.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0FF4B281B3A02E50045D414 /* Presence.swift */; };
+		E0FF4B2B1B3A3D9A0045D414 /* Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0FF4B2A1B3A3D9A0045D414 /* Dictionary.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -43,6 +44,7 @@
 		E0FF4B241B3A02CC0045D414 /* Messaging.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Messaging.swift; sourceTree = "<group>"; };
 		E0FF4B261B3A02DD0045D414 /* RingOut.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RingOut.swift; sourceTree = "<group>"; };
 		E0FF4B281B3A02E50045D414 /* Presence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Presence.swift; sourceTree = "<group>"; };
+		E0FF4B2A1B3A3D9A0045D414 /* Dictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dictionary.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 				E0FF4B181B3337950045D414 /* Sdk.swift */,
 				E0FF4B1E1B333E1F0045D414 /* Subscription.swift */,
 				E0FF4B1C1B3338200045D414 /* Platform.swift */,
+				E0FF4B2A1B3A3D9A0045D414 /* Dictionary.swift */,
 				E0FF4B221B3A02BA0045D414 /* CallLog.swift */,
 				E0FF4B241B3A02CC0045D414 /* Messaging.swift */,
 				E0FF4B261B3A02DD0045D414 /* RingOut.swift */,
@@ -149,6 +152,7 @@
 				E0FF4B251B3A02CC0045D414 /* Messaging.swift in Sources */,
 				E0FF4B191B3337950045D414 /* Sdk.swift in Sources */,
 				E0FF4B121B3337790045D414 /* main.swift in Sources */,
+				E0FF4B2B1B3A3D9A0045D414 /* Dictionary.swift in Sources */,
 				E0FF4B1D1B3338200045D414 /* Platform.swift in Sources */,
 				E0FF4B271B3A02DD0045D414 /* RingOut.swift in Sources */,
 				E0FF4B231B3A02BA0045D414 /* CallLog.swift in Sources */,
