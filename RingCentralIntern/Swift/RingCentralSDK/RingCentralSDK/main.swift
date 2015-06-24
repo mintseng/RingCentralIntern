@@ -14,7 +14,8 @@ var platform = rcsdk.getPlatform()
 platform.authorize(username, password: password)
 println(platform.auth!.getAccessToken())
 sleep(2)
-platform.test()
+
+
 
 //usleep(2000000)
 //

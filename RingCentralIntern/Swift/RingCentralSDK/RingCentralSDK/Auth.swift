@@ -247,6 +247,20 @@ class Auth {
         return self.refresh_token!
     }
     
+    func getUsername() -> String {
+        return self.username
+    }
     
+    func getAppKey() -> String {
+        return self.app_key!
+    }
+    
+    func getAppSecret() -> String {
+        return self.app_secret!
+    }
+    
+    func getExtension() -> String {
+        return self.ext
+    }
     
 }

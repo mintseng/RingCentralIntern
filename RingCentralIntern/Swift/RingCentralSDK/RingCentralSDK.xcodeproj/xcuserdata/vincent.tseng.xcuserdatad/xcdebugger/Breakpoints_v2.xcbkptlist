@@ -63,7 +63,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "27"
             endingLineNumber = "27"
-            landmarkName = "getAccountIdExtensionId(_:auth:)"
+            landmarkName = "getAccountIdExtensionId(_:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

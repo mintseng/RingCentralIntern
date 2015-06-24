@@ -111,7 +111,7 @@ class Platform {
     
     func getAccountInfo() -> Bool {
         var test: Bool = false
-        Account(server: self.server).getAccountIdExtensionId(self.server, auth: self.auth!)
+        Account(server: self.server).getAccountIdExtensionId(self.auth!)
         test = true
         return test
     }
@@ -121,6 +121,17 @@ class Platform {
         CallLog(server: self.server).callLogExt(self.auth!)
         CallLog(server: self.server).activeCalls(self.auth!)
         CallLog(server: self.server).activeCallsExt(self.auth!)
+        
+    }
+    
+    func test2() {
+        Messaging(server: self.server).sms(self.auth!, text: "testing", to: "14089406669")
+    }
+    
+    func test3() {
+        Messaging(server: self.server).getMessages(self.auth!)
+        Messaging(server: self.server).getMessage(self.auth!, msgId: "2394843412560562429")
+        
         
     }
     

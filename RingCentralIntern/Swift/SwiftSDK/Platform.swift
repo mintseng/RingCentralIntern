@@ -300,7 +300,7 @@ class Platform {
             "\"text\": \"" +
             msg +
             "\"" +
-        "}"
+            "}"
         
         
         
