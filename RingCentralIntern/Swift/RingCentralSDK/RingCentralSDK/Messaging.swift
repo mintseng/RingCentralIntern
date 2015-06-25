@@ -153,7 +153,7 @@ class Messaging {
     }
     
     
-    func sms(auth: Auth, text: String, to: String) -> (NSData, NSURLResponse, NSError) {
+    func sms(auth: Auth, text: String, to: String) -> (NSData?, NSURLResponse?, NSError?) {
 
         let url = NSURL(string: server + "/v1.0/account/~/extension/~/sms")
         
@@ -184,7 +184,7 @@ class Messaging {
         
         println((response as! NSHTTPURLResponse).statusCode)
         
-        return (data!, response!, error!)
+        return (data, response, error)
 
         
     }
@@ -192,7 +192,7 @@ class Messaging {
     /// Sends a company pager
     ///
     /// Sends from extension to extension within the same number.
-    func companyPager(auth: Auth, text: String, to: String...) -> (NSData, NSURLResponse, NSError){
+    func companyPager(auth: Auth, text: String, to: String...) -> (NSData?, NSURLResponse?, NSError?){
         let url = NSURL(string: server + "/v1.0/account/~/extension/~/company-pager")
         
         let holder = auth.getExtension()
@@ -234,7 +234,7 @@ class Messaging {
         
         println((response as! NSHTTPURLResponse).statusCode)
         
-        return (data!, response!, error!)
+        return (data, response, error)
 
     }
     

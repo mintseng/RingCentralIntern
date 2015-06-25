@@ -49,7 +49,10 @@ class Platform {
     /// :param: ext         The extension of the RingCentral account
     func authorize(username: String, ext: String, password: String) {
         auth = Auth(username: username, ext: ext, password: password, server: self.server)
-        auth!.login(appKey, secret: appSecret)
+        let feedback = auth!.login(appKey, secret: appSecret)
+        if (feedback.1 as! NSHTTPURLResponse).statusCode == 2 {
+            self.setVersion()
+        }
     }
     
     
