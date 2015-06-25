@@ -7,7 +7,7 @@ class RingOut {
         self.server = server
     }
     
-    func ringOut(auth: Auth, to: String, from: String) {
+    func ringOut(auth: Auth, to: String, from: String) -> (NSData, NSURLResponse, NSError) {
         let url = NSURL(string: server + "/v1.0/account/~/extension/~/ringout")
         let number: String = auth.getUsername()
         
@@ -40,13 +40,15 @@ class RingOut {
         var error: NSError?
         let data: NSData! = NSURLConnection.sendSynchronousRequest(request, returningResponse: &response, error: &error)
         
+        return (data!, response!, error!)
+        
     }
     
     
     /// Honestly no idea what this does
     ///
     /// DOES NOT SEEM TO WORK: "message" : "object not found"
-    func getRingOut(auth: Auth, ringId: String) {
+    func getRingOut(auth: Auth, ringId: String) -> (NSData, NSURLResponse, NSError) {
         let url = NSURL(string: server + "/v1.0/account/~/extension/~/ringout/" + ringId)
         
         // Sets up the request
@@ -64,12 +66,14 @@ class RingOut {
         
         println(response)
         println(NSString(data: data!, encoding: NSUTF8StringEncoding))
+        
+        return (data!, response!, error!)
     }
     
     /// Deletes a ringOut
     ///
     /// Can only be done if the CALLEE has not yet accepted the call
-    func deleteRingOut(auth: Auth, ringId: String) {
+    func deleteRingOut(auth: Auth, ringId: String) -> (NSData, NSURLResponse, NSError) {
         let url = NSURL(string: server + "/v1.0/account/~/extension/~/ringout/" + ringId)
         
         // Sets up the request
@@ -84,5 +88,7 @@ class RingOut {
         
         var errors: NSError?
         let readdata = NSJSONSerialization.JSONObjectWithData(data!, options: nil, error: &errors) as! NSDictionary
+        
+        return (data!, response!, error!)
     }
 }

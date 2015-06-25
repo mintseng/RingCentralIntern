@@ -57,7 +57,7 @@ class Auth {
     ///
     /// :param: key The appKey for RC account
     /// :param: secret The appSecret for RC account
-    func login(key: String, secret: String) {
+    func login(key: String, secret: String) -> (NSData, NSURLResponse, NSError) {
         self.app_key = key
         self.app_secret = secret
         
@@ -102,12 +102,14 @@ class Auth {
         self.expire_time = time + self.expires_in
         self.refresh_token_expire_time = time + self.refresh_token_expires_in
         
+        return (data!, response!, error!)
+        
     }
     
     /// Refreshes the access_token and refresh_token with the current refresh_token
     ///
     ///
-    func refresh() {
+    func refresh() -> (NSData, NSURLResponse, NSError) {
         // URL api call for getting token
         let url = NSURL(string: server + "/oauth/token")
         
@@ -152,7 +154,7 @@ class Auth {
         self.refresh_token_expire_time = time + self.refresh_token_expires_in
             
             
-        
+        return (data!, response!, error!)
 
     }
     
@@ -173,7 +175,7 @@ class Auth {
     /// Revokes the access_token
     ///
     ///
-    func revokeToken() {
+    func revokeToken() -> (NSData, NSURLResponse, NSError) {
         let url = NSURL(string: server + "/oauth/revoke")
         
         
@@ -203,6 +205,8 @@ class Auth {
         self.refresh_token_expire_time = 0
         
         println(response)
+        
+        return (data!, response!, error!)
     
     }
     

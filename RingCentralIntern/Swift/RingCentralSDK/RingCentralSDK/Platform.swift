@@ -10,6 +10,14 @@ class Platform {
     let appSecret: String
     var version: String = "0"
     
+    // Platform tools
+    var ringOut: RingOut?
+    var messaging: Messaging?
+    var callLog: CallLog?
+    var presence: Presence?
+    var account: Account?
+    var dictionary: Dictionary?
+    
     
     /// Constructor for the platform of the SDK
     ///

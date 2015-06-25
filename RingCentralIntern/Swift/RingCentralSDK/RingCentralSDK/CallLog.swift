@@ -8,12 +8,12 @@ class CallLog {
         self.server = server
     }
     
-    func callLog(auth: Auth) {
+    func callLog(auth: Auth) -> (NSData, NSURLResponse, NSError) {
         let url = NSURL(string: server + "/v1.0/account/~/call-log")
-        httpRequest(auth, url: url!)
+        return httpRequest(auth, url: url!)
     }
     
-    func httpRequest(auth: Auth, url: NSURL) {
+    func httpRequest(auth: Auth, url: NSURL) -> (NSData, NSURLResponse, NSError) {
         let request = NSMutableURLRequest(URL: url)
         request.HTTPMethod = "GET"
         request.setValue("application/json", forHTTPHeaderField: "Accept")
@@ -30,30 +30,32 @@ class CallLog {
 //        println(response)
 //        println(NSString(data: data!, encoding: NSUTF8StringEncoding))
 //        println(error)
+        
+        return (data!, response!, error!)
     }
     
-    func callRecordIds(auth: Auth, id: String) {
+    func callRecordIds(auth: Auth, id: String) -> (NSData, NSURLResponse, NSError){
         let url = NSURL(string: server + "/v1.0/account/~/call-log/" + id)
-        httpRequest(auth, url: url!)
+        return httpRequest(auth, url: url!)
     }
     
-    func callRecordIdsExt(auth: Auth, id: String) {
+    func callRecordIdsExt(auth: Auth, id: String) -> (NSData, NSURLResponse, NSError) {
         let url = NSURL(string: server + "/v1.0/account/~/extension/~/call-log/" + id)
-        httpRequest(auth, url: url!)
+        return httpRequest(auth, url: url!)
     }
     
-    func callLogExt(auth: Auth) {
+    func callLogExt(auth: Auth) -> (NSData, NSURLResponse, NSError) {
         let url = NSURL(string: server + "/v1.0/account/~/extension/~/call-log")
-        httpRequest(auth, url: url!)
+        return httpRequest(auth, url: url!)
     }
     
-    func activeCalls(auth: Auth) {
+    func activeCalls(auth: Auth) -> (NSData, NSURLResponse, NSError) {
         let url = NSURL(string: server + "/v1.0/account/~/active-calls")
-        httpRequest(auth, url: url!)
+        return httpRequest(auth, url: url!)
     }
     
-    func activeCallsExt(auth: Auth) {
+    func activeCallsExt(auth: Auth) -> (NSData, NSURLResponse, NSError) {
         let url = NSURL(string: server + "/v1.0/account/~/extension/~/active-calls")
-        httpRequest(auth, url: url!)
+        return httpRequest(auth, url: url!)
     }
 }

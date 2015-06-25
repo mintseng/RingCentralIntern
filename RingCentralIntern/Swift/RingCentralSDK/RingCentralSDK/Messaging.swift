@@ -8,7 +8,7 @@ class Messaging {
     }
     
     // Does not seem to work yet on exploerer API
-    func getMessage(auth: Auth, msgId: String) {
+    func getMessage(auth: Auth, msgId: String) -> (NSData, NSURLResponse, NSError) {
         let url = NSURL(string: server + "/v1.0/account/~/extension/~/message-store/" + msgId)
         
         // Sets up the request
@@ -30,13 +30,15 @@ class Messaging {
 //        println((response as! NSHTTPURLResponse).statusCode)
 //        println(response)
 //        println(NSString(data: data!, encoding: NSUTF8StringEncoding))
+        
+        return (data!, response!, error!)
     }
 
     
     /// Gets back the messages stored for a specific account and extension
     ///
     ///
-    func getMessages(auth: Auth) {
+    func getMessages(auth: Auth) -> (NSData, NSURLResponse, NSError) {
         let url = NSURL(string: server + "/v1.0/account/~/extension/~/message-store")
         
         // Sets up the request
@@ -56,9 +58,11 @@ class Messaging {
 //        println((response as! NSHTTPURLResponse).statusCode)
 //        println(response)
 //        println(NSString(data: data!, encoding: NSUTF8StringEncoding))
+        
+        return (data!, response!, error!)
     }
     
-    func deleteMessage(auth: Auth, msgId: String) {
+    func deleteMessage(auth: Auth, msgId: String) -> (NSData, NSURLResponse, NSError) {
         let url = NSURL(string: server + "/v1.0/account/~/extension/~/message-store/" + msgId)
         
         // Sets up the request
@@ -73,9 +77,11 @@ class Messaging {
         
         var errors: NSError?
         let readdata = NSJSONSerialization.JSONObjectWithData(data!, options: nil, error: &errors) as! NSDictionary
+        
+        return (data!, response!, error!)
     }
     
-    func deleteMessages(auth: Auth, convoId: String) {
+    func deleteMessages(auth: Auth, convoId: String) -> (NSData, NSURLResponse, NSError) {
         let url = NSURL(string: server + "/v1.0/account/~/extension/~/message-store/" + convoId)
         
         // Sets up the request
@@ -90,13 +96,15 @@ class Messaging {
         
         var errors: NSError?
         let readdata = NSJSONSerialization.JSONObjectWithData(data!, options: nil, error: &errors) as! NSDictionary
+        
+        return (data!, response!, error!)
     }
     
     /// Modifies a selected message
     ///
     /// **Caution**: Only updates 'Read' or 'Unread' status at the moment.
     /// This info goes inside of 'text'
-    func modifyMessage(auth: Auth, msgId: String, text: String) {
+    func modifyMessage(auth: Auth, msgId: String, text: String) -> (NSData, NSURLResponse, NSError) {
         let url = NSURL(string: server + "/v1.0/account/~/extension/~/message-store/" + msgId)
         
         // Sets up the request
@@ -114,9 +122,11 @@ class Messaging {
         
         var errors: NSError?
         let readdata = NSJSONSerialization.JSONObjectWithData(data!, options: nil, error: &errors) as! NSDictionary
+        
+        return (data!, response!, error!)
     }
     
-    func getAttachment(auth: Auth, msgId: String, attachId: String) {
+    func getAttachment(auth: Auth, msgId: String, attachId: String) -> (NSData, NSURLResponse, NSError) {
         let url = NSURL(string: server + "/v1.0/account/~/extension/~/message-store/" + msgId + "/content/" + attachId)
         
         // Sets up the request
@@ -131,6 +141,8 @@ class Messaging {
         
         var errors: NSError?
         let readdata = NSJSONSerialization.JSONObjectWithData(data!, options: nil, error: &errors) as! NSDictionary
+        
+        return (data!, response!, error!)
     }
     
     /// Sends a fax to the given number
@@ -141,7 +153,7 @@ class Messaging {
     }
     
     
-    func sms(auth: Auth, text: String, to: String) {
+    func sms(auth: Auth, text: String, to: String) -> (NSData, NSURLResponse, NSError) {
 
         let url = NSURL(string: server + "/v1.0/account/~/extension/~/sms")
         
@@ -171,6 +183,8 @@ class Messaging {
         let readdata = NSJSONSerialization.JSONObjectWithData(data!, options: nil, error: &errors) as! NSDictionary
         
         println((response as! NSHTTPURLResponse).statusCode)
+        
+        return (data!, response!, error!)
 
         
     }
@@ -178,7 +192,7 @@ class Messaging {
     /// Sends a company pager
     ///
     /// Sends from extension to extension within the same number.
-    func companyPager(auth: Auth, text: String, to: String...) {
+    func companyPager(auth: Auth, text: String, to: String...) -> (NSData, NSURLResponse, NSError){
         let url = NSURL(string: server + "/v1.0/account/~/extension/~/company-pager")
         
         let holder = auth.getExtension()
@@ -219,6 +233,8 @@ class Messaging {
         let readdata = NSJSONSerialization.JSONObjectWithData(data!, options: nil, error: &errors) as! NSDictionary
         
         println((response as! NSHTTPURLResponse).statusCode)
+        
+        return (data!, response!, error!)
 
     }
     

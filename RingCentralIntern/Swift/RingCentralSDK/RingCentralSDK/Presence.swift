@@ -7,7 +7,7 @@ class Presence {
         self.server = server
     }
     
-    func getPresence(auth: Auth) {
+    func getPresence(auth: Auth) -> (NSData, NSURLResponse, NSError) {
         let url = NSURL(string: server + "/v1.0/account/~/extension/~/presence")
         
         // Sets up the request
@@ -25,5 +25,7 @@ class Presence {
         
         println(response)
         println(NSString(data: data!, encoding: NSUTF8StringEncoding))
+        
+        return (data!, response!, error!)
     }
 }

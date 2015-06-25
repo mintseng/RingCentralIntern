@@ -8,7 +8,7 @@ class Account {
         self.server = server
     }
     
-    func getAccountId(auth: Auth) {
+    func getAccountId(auth: Auth) -> (NSData, NSURLResponse, NSError) {
         let url = NSURL(string: server + "/v1.0/account/~")
         
         let request = NSMutableURLRequest(URL: url!)
@@ -22,9 +22,11 @@ class Account {
         
         var errors: NSError?
         let readdata = NSJSONSerialization.JSONObjectWithData(data, options: nil, error: &errors) as! NSDictionary
+        
+        return (data, response!, error!)
     }
     
-    func getAccountIdExtensionId(auth: Auth) {
+    func getAccountIdExtensionId(auth: Auth) -> (NSData, NSURLResponse, NSError) {
         let url = NSURL(string: server + "/v1.0/account/~/extension/~")
         let request = NSMutableURLRequest(URL: url!)
         request.HTTPMethod = "GET"
@@ -38,9 +40,10 @@ class Account {
         var errors: NSError?
         let readdata = NSJSONSerialization.JSONObjectWithData(data, options: nil, error: &errors) as! NSDictionary
         
+        return (data, response!, error!)
     }
     
-    func getExtensions(auth: Auth) {
+    func getExtensions(auth: Auth) -> (NSData, NSURLResponse, NSError) {
         let url = NSURL(string: server + "/v1.0/account/~/extension")
         
         let request = NSMutableURLRequest(URL: url!)
@@ -55,7 +58,7 @@ class Account {
         var errors: NSError?
         let readdata = NSJSONSerialization.JSONObjectWithData(data, options: nil, error: &errors) as! NSDictionary
         
-        
+        return (data, response!, error!)
 
     }
     
