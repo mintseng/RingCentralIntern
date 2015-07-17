@@ -17,7 +17,7 @@ let authType = "Basic"
 let app_key = "eI3RKs1oSBSY2kReFnviIw"
 let app_secret = "Gv9DgBZVTkaQNbbyEx-SQQBsnUKECmT5GrmGXbHTmpUQ"
 let username = "13464448343"
-let password = "P@ssw0rd"
+let password = "P@ssw0r"
 
 let plainData = (app_key + ":" + app_secret as NSString).dataUsingEncoding(NSUTF8StringEncoding)
 let base64String = plainData!.base64EncodedStringWithOptions(NSDataBase64EncodingOptions(rawValue: 0))
@@ -64,8 +64,16 @@ request.HTTPBody = bodyString.dataUsingEncoding(NSUTF8StringEncoding)
 //request.HTTPBody = NSJSONSerialization.dataWithJSONObject(params, options: NSJSONWritingOptions.allZeros, error: &err)
 
 NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue()) {(response, data, error) in
+    println(data.description)
     println(NSString(data: data, encoding: NSUTF8StringEncoding))
     println(response)
+    (response as! NSHTTPURLResponse).statusCode
+    (response as! NSHTTPURLResponse).description
+    (response as! NSHTTPURLResponse).allHeaderFields.dynamicType
+    ((response as! NSHTTPURLResponse).allHeaderFields as! [String: String]).dynamicType
+    for pair in (response as! NSHTTPURLResponse).allHeaderFields.keys {
+        println((response as! NSHTTPURLResponse).allHeaderFields[pair]!)
+    }
     println(error)
     var errors: NSError?
     let readdata = NSJSONSerialization.JSONObjectWithData(data, options: nil, error: &errors) as! NSDictionary
@@ -145,4 +153,16 @@ NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQue
 // account id
 
 
-// XCPSetExecutionShouldContinueIndefinitely()
+XCPSetExecutionShouldContinueIndefinitely()
+
+
+func test() -> String {
+    return "hi"
+}
+
+func test() -> Int {
+    return 2
+}
+
+println(test() + "Hi")
+println(test() + 2)

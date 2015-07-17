@@ -104,10 +104,44 @@ NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQue
 
 
 // revoke
+// ACCOUNT ID
+
+url = NSURL(string: server + "/v1.0/account/~/extension/~")
+
+request = NSMutableURLRequest(URL: url!)
+request.HTTPMethod = "GET"
+request.addValue("Bearer " + access_token, forHTTPHeaderField: "Authorization")
+request.addValue("application/json", forHTTPHeaderField: "Accept")
+
+NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue()) {(response, data, error) in
+    println(NSString(data: data, encoding: NSUTF8StringEncoding))
+    println(response)
+    println(error)
+    println("End")
+}
 
 
+// account id
 
-// API VERSION
+
+// Account Generator
+
+url = NSURL(string: server + "/ags/ws?wsdl")
+
+request = NSMutableURLRequest(URL: url!)
+request.HTTPMethod = "GET"
+request.addValue("Bearer " + access_token, forHTTPHeaderField: "Authorization")
+request.addValue("application/json", forHTTPHeaderField: "Accept")
+
+NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue()) {(response, data, error) in
+    println(NSString(data: data, encoding: NSUTF8StringEncoding))
+    println(response)
+    println(error)
+    println("End")
+}
+
+
+// helping michael set up api call
 
 url = NSURL(string: "https://api.zoom.us/v1/user/getbyemail")
 
@@ -133,26 +167,23 @@ NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQue
 XCPSetExecutionShouldContinueIndefinitely()
 
 
-// api version
+// helping michael set up api call
 
+var test: [String: String] = ["hi": "bye", "1": "2"]
+let x = test["ty"]
+println(x)
 
-// ACCOUNT ID
-
-url = NSURL(string: server + "/account/~/extension/~")
-
-request = NSMutableURLRequest(URL: url!)
-request.HTTPMethod = "GET"
-request.addValue("Bearer " + access_token, forHTTPHeaderField: "Authorization")
-request.addValue("application/json", forHTTPHeaderField: "Accept")
-
-NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue()) {(response, data, error) in
-    println(NSString(data: data, encoding: NSUTF8StringEncoding))
-    println(response)
-    println(error)
-    println("End")
+func check(test: String? = "hi") {
+    if let x = test {
+        println("OK")
+    } else {
+        println(test)
+    }
 }
+println("HI")
+check(test: x)
 
+println("HI")
 
-// account id
 
 
