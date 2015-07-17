@@ -16,32 +16,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate, PNObjectEventListener {
     var client:PubNub?
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        let config = PNConfiguration( publishKey: "sec-c-ZDNlYjY0OWMtMWFmOC00OTg2LWJjMTMtYjBkMzgzOWRmMzUz", subscribeKey: "sub-c-b8b9cd8c-e906-11e2-b383-02ee2ddab7fe")
+        let config = PNConfiguration( publishKey: "", subscribeKey: "sub-c-b8b9cd8c-e906-11e2-b383-02ee2ddab7fe")
         client = PubNub.clientWithConfiguration(config)
-        
         client?.addListener(self)
-        
-        
-        client?.subscribeToChannels(["1225178274607311_06d3e038"], withPresence: true)
-
-        
-//        client?.subscribeToPresenceChannels(["1214324343552658_3e243247"])
-        
+        client?.subscribeToChannels(["33232195998092_690a3bc4"], withPresence: true)
         return true
     }
-    
+
     func client(client: PubNub!, didReceiveStatus status: PNSubscribeStatus!) {
-        println("status")
+        println("status ANDREWJ ;LKAWJFE;LAKFJL JWEF")
         println(status.data)
     }
     
     func client(client: PubNub!, didReceivePresenceEvent event: PNPresenceEventResult!) {
-        println("event")
+        println("event ANDREW POSITIVITY ")
         println(event)
     }
     
     func client(client: PubNub!, didReceiveMessage message: PNMessageResult!, withStatus status: PNErrorStatus!) {
-        println("message")
+        println("message ANDREW ISGOOD")
         println(message)
         println(status)
     }
