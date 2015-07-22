@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B4F8F6069370412993D4426A /* libPods-PubNubTest.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EDF5DFDBEB955E2508E6119D /* libPods-PubNubTest.a */; };
+		A2A5A1EB593840166A7BFE2A /* Pods_PubNubTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53D19C43DBB43A090DA546A4 /* Pods_PubNubTest.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		E0830F301B56CAFD004D2883 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0830F2F1B56CAFD004D2883 /* AppDelegate.swift */; };
 		E0830F321B56CAFD004D2883 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0830F311B56CAFD004D2883 /* ViewController.swift */; };
 		E0830F351B56CAFD004D2883 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0830F331B56CAFD004D2883 /* Main.storyboard */; };
@@ -31,6 +31,7 @@
 		2BA06647BCC979E677E7E10B /* Pods-PubNubTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PubNubTest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PubNubTest/Pods-PubNubTest.debug.xcconfig"; sourceTree = "<group>"; };
 		2DD1323AD38DE70502EE4144 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		48656589827A65CDC7759A17 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		53D19C43DBB43A090DA546A4 /* Pods_PubNubTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PubNubTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9905F0CA02D36985E2FCB928 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		E0830F2A1B56CAFD004D2883 /* PubNubTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PubNubTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0830F2E1B56CAFD004D2883 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -43,7 +44,6 @@
 		E0830F441B56CAFD004D2883 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E0830F451B56CAFD004D2883 /* PubNubTestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PubNubTestTests.swift; sourceTree = "<group>"; };
 		E0C641C41B584EF300B3B5D7 /* PubNubTest-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PubNubTest-Bridging-Header.h"; sourceTree = "<group>"; };
-		EDF5DFDBEB955E2508E6119D /* libPods-PubNubTest.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PubNubTest.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,7 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B4F8F6069370412993D4426A /* libPods-PubNubTest.a in Frameworks */,
+				A2A5A1EB593840166A7BFE2A /* Pods_PubNubTest.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,7 +80,7 @@
 			isa = PBXGroup;
 			children = (
 				48656589827A65CDC7759A17 /* libPods.a */,
-				EDF5DFDBEB955E2508E6119D /* libPods-PubNubTest.a */,
+				53D19C43DBB43A090DA546A4 /* Pods_PubNubTest.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -156,6 +156,7 @@
 				E0830F271B56CAFD004D2883 /* Frameworks */,
 				E0830F281B56CAFD004D2883 /* Resources */,
 				457848C20413CF32DAACE951 /* Copy Pods Resources */,
+				18E209BFD4EF31B5F74CA459 /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -242,6 +243,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		18E209BFD4EF31B5F74CA459 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PubNubTest/Pods-PubNubTest-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		457848C20413CF32DAACE951 /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
