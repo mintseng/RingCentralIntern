@@ -13,22 +13,31 @@ func base64ToByteArray(base64String: String) -> [UInt8]? {
     return nil
 }
 
-var AESkey = base64ToByteArray(base64Key)
-AESkey.0.dynamicType
-var AESmessage = base64ToByteArray(base64Message)
 
 
-var context = Swift.Dictionary<String, Any>()
-context["method"] = "POST"
-context["url"] = "/v1.0/account/~/extension/~/ringout"
-context["body"] = ["to": ["phoneNumber": "14088861168"],
-    "from": ["phoneNumber": "14088861168"],
-    "callerId": ["phoneNumber": "13464448343"],
-    "playPrompt": "true"]
 
-context["body"]
+let decodedData = NSData(base64EncodedString: base64Key, options: NSDataBase64DecodingOptions(rawValue: 0))
+let decodedString = NSString(data: decodedData!, encoding: NSUTF8StringEncoding)
+println(decodedString)
+println(base64ToByteArray(base64Key))
 
-var test = "hi"
 
-var test2 = ["hi": "bye", "test": ["in": "out"]]
-test2.description
+//var AESkey = base64ToByteArray(base64Key)
+//AESkey.0.dynamicType
+//var AESmessage = base64ToByteArray(base64Message)
+//
+//
+//var context = Swift.Dictionary<String, Any>()
+//context["method"] = "POST"
+//context["url"] = "/v1.0/account/~/extension/~/ringout"
+//context["body"] = ["to": ["phoneNumber": "14088861168"],
+//    "from": ["phoneNumber": "14088861168"],
+//    "callerId": ["phoneNumber": "13464448343"],
+//    "playPrompt": "true"]
+//
+//context["body"]
+//
+//var test = "hi"
+//
+//var test2 = ["hi": "bye", "test": ["in": "out"]]
+//test2.description

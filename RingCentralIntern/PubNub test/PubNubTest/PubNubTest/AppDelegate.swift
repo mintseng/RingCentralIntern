@@ -13,7 +13,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, PNObjectEventListener {
         let config = PNConfiguration( publishKey: "", subscribeKey: "sub-c-b8b9cd8c-e906-11e2-b383-02ee2ddab7fe")
         client = PubNub.clientWithConfiguration(config)
         client?.addListener(self)
-        client?.subscribeToChannels(["398868478581806_48b4d23e"], withPresence: true)
+        client?.subscribeToChannels(["460789629149116_7beb7800"], withPresence: true)
         return true
     }
     
@@ -24,11 +24,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate, PNObjectEventListener {
         var AESmessage = base64ToByteArray(base64Message)
         var AESkey = base64ToByteArray(base64Key)
         
-        let key = [0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00] as [UInt8]
+        let key = AESkey
         let iv = Cipher.randomIV(AES.blockSize)
         
-        let decrypted = AES(key: AESkey!, iv: iv, blockMode: .CBC)?.decrypt(AESmessage!, padding: PKCS7())
+        let decrypted = AES(key: AESkey!, iv: iv, blockMode: .ECB)?.decrypt(AESmessage!, padding: PKCS7())
+        println(decrypted.dynamicType)
         println(decrypted)
+        
+        println(NSString(bytes: decrypted! as [UInt8], length: decrypted!.count, encoding: NSUTF8StringEncoding))
+        
+        
     }
     
     func base64ToByteArray(base64String: String) -> [UInt8]? {
