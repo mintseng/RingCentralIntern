@@ -3,6 +3,7 @@ platform :ios, '8.0'
 target 'PubNubTest' do
     source 'https://github.com/CocoaPods/Specs.git'
     pod 'PubNub', '~>4.0'
+    source 'https://github.com/krzyzanowskim/CryptoSwift'
     pod 'CryptoSwift'
 end
 target 'PubNubTestTests' do

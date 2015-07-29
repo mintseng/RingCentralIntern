@@ -7,8 +7,8 @@ PODS:
     - CocoaLumberjack/Core
   - CocoaLumberjack/Extensions (2.0.0):
     - CocoaLumberjack/Default
-  - CryptoSwift (0.0.10)
-  - PubNub (4.0.2):
+  - CryptoSwift (0.0.12)
+  - PubNub (4.0.3):
     - CocoaLumberjack (= 2.0.0)
 
 DEPENDENCIES:
@@ -17,7 +17,7 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   CocoaLumberjack: a6f77d987d65dc7ba86b0f84db7d0b9084f77bcb
-  CryptoSwift: 3b886d001f50deb65623a8967d68f6b8bf8d9ba1
-  PubNub: 008513dcad34fbc41c8e0cb6665641c731ac85e4
+  CryptoSwift: 16f1b5a768057636275b76d1c43231c2abba9e80
+  PubNub: bdcc6eae1e419fe88ea6ed9013b1f6357914c25b
 
 COCOAPODS: 0.37.2

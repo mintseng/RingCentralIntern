@@ -41,3 +41,6 @@ println(base64ToByteArray(base64Key))
 //
 //var test2 = ["hi": "bye", "test": ["in": "out"]]
 //test2.description
+
+let chars: [UInt8] = [ 49, 50, 51 ]
+var str = String(bytes: chars, encoding: NSUTF8StringEncoding)
