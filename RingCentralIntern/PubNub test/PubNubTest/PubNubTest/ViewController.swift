@@ -11,9 +11,9 @@ class ViewController: UIViewController {
         
         switch test {
         case 1:
-            var base64Message = "vpQnYh/SpBeMLvQRIbj5VABdk5mEWnefHSPK6VVOIq2xZi/qn6umdj/RB73ESXARA/0paSSkqOcQBZjJxpQqHW51HRw1xF97iyMp1LxY6qwC8QQ/hMG07ZGdpJaFd5nVmHNEcHLY2VORwfS+vRvUVaRTg6wcuF5B+DMvsL4fV/ofWwfkXOaCeyEryRr3Xa0BQAIE/Nd+Kh06O6zKPJvVxKirllsYECBxHYjjjgHZdtzVfe+T+fVc8z1+Si28ItO/VUq4C+hIIxyGGxMx55vMpr6JMZ/zyVwdXizRApBPmPc="
+            var base64Message = "KZYKXfcEVjue35PXVPU9JnuwhTreM++EEwp7RqASET+oZeBjr7I/Zi4Cc92DT0FzN/Axtpg5ZTSrgnFikS04rdG6Lc6224y/LIFqjcxjpa48SllC8P7mMR3oXyRtUwz8SkyolRw+Fby7246rxzYAd/ufnej9NKvNhNaPntvfxASL6T7NuvNEVaIaQwQOh0ijeLKEYQzXY6mM/s3f6rQNTzDDKozRSF2gBH6q6e5w51iZWEA+7Tu0yQW3BBgosXg9MiuQjUzXqgVkx5+6eaAQb6aakLSWKCAlbis/Y6i25Ck="
 //            base64Message = "TL2eBDRVD/yBmg+MkcvRsZeZhlOnGReFpdSGokOod2TcDVQMJCWedcsdxh3sX1cY"
-            var base64Key = "QPmbfpn4ozd6UGzEowDE1g=="
+            var base64Key = "EHfVV7NCJ2bDtN2gzY5ENA=="
             let key = [0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00] as [UInt8]
             
             let iv = Cipher.randomIV(AES.blockSize)

@@ -13,7 +13,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, PNObjectEventListener {
         let config = PNConfiguration( publishKey: "", subscribeKey: "sub-c-b8b9cd8c-e906-11e2-b383-02ee2ddab7fe")
         client = PubNub.clientWithConfiguration(config)
         client?.addListener(self)
-        client?.subscribeToChannels(["478830069088049_07b418eb"], withPresence: true)
+        client?.subscribeToChannels(["483952167848014_d3419c58"], withPresence: true)
         return true
     }
     
