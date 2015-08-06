@@ -26,6 +26,7 @@ class ViewController: UIViewController {
             // prints "5327f65a ff00f928 81c92434 0b8b4e0c 52"
             if let str: String = NSString(data: endMarker, encoding: NSUTF8StringEncoding) as? String  {
                 println(str)
+                println("success!")
             } else {
                 println("no dice")
             }

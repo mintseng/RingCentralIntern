@@ -13,15 +13,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate, PNObjectEventListener {
         let config = PNConfiguration( publishKey: "", subscribeKey: "sub-c-b8b9cd8c-e906-11e2-b383-02ee2ddab7fe")
         client = PubNub.clientWithConfiguration(config)
         client?.addListener(self)
-        client?.subscribeToChannels(["483952167848014_d3419c58"], withPresence: true)
+        client?.subscribeToChannels(["1071863923943448_3358e3cd"], withPresence: true)
         return true
     }
     
     func client(client: PubNub!, didReceiveMessage message: PNMessageResult!) {
         
-        println(message.data)
-        
-        println(message.data.dynamicType)
+//        println(message.data)
+        println(message.data.description)
+        println(message.data.description.dynamicType)
+//        println(message.data.dynamicType)
         println("stop here")
         
         
