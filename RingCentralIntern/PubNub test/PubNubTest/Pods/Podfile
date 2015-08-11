@@ -1,5 +1,5 @@
 use_frameworks!
-platform :osx, '10.10'
+platform :ios, '8.4'
 target 'PubNubTest' do
 source 'https://github.com/CocoaPods/Specs.git'
 pod 'PubNub', '~>4.0'
